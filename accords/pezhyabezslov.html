@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Accords Me</title>
+</head>
+<body>
+    <section class="header" id="header">
+        <header>
+            <div class="logo">
+                <img src="../images/332-3324661_related-with-music-2-number-png-icon.png" alt="">
+            </div>
+            <div class="links">
+                <a href="../index.html">Main</a>
+                <a href="">My accords</a>
+                <a href="">Accords img</a>
+                <a href="">Links</a>
+                <a target="_blank" href="https://amdm.in">AmDm</a>
+            </div>
+        </header>
+    </section>
+
+    <div class="padding"></div>
+
+    <div class="container">
+        <div class="songbox">
+            <a href="../accords/pezhyabezslov.html">
+                <div class="leftpanel">
+                    <audio id="song4" src="../audio/Viktor_Cojj_-_Pesnya_bez_slov_47828898.mp3"></audio>
+                    <img src="https://s.mxmcdn.net/images-storage/albums4/1/0/3/0/0/4/38400301_800_800.jpg" alt="" class="songimg">
+                    <h1>Песня без слов <br><p>Группа Кино</p></h1>
+                </div>
+            </a>
+            <div class="rightpanel">
+                <button class="playbut" id="s4but"><img src="../images/pause.png" alt=""></button>
+                <input type="range" id="s4" class="s1" min="0" max="306" value="0" oninput="x4()">
+                <div id="send_result4" class="sendresult">0</div>
+                <img src="../images/free-icon-sound-3091231.png" alt="" class="songvolume">
+                <input type="range" id="v4" class="v1" min="0" max="1" value="0.5" step="0.01" oninput="volume4()">
+                <!-- <div id="send_result2">0</div> -->
+            </div>
+        </div>
+
+        <div class="accords">
+            <h1>
+                Вступление <p>[Am, G, Dm, E, F]</p> 3x
+                <br><br>
+                <p>Am</p>
+                Песня без слов, ночь без сна
+                <p>G</p>
+                Всё в свое время, зима и весна
+                <p>Dm</p>
+                Каждой звезде свой неба кусок
+                <p>EㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤF</p>
+                Каждому морю дождя глоток
+                <p>Am</p>
+                Каждому яблоку место упасть
+                <p>G</p>
+                Каждому вору возможность украсть
+                <p>Dm</p>
+                Каждой собаке палку и кость
+                <p>EㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤF</p>
+                И каждому волку зубы и злость
+                <br><br>
+                Припев
+                <br>
+                Проигрыш 1 <p>[Am, G, Dm, E, F]</p> 2x
+                <br><br>
+                <p>Am</p>
+                Если есть стадо, есть пастух
+                <p>G</p>
+                Если есть тело, должен быть дух
+                <p>Dm</p>
+                Если есть шаг, должен быть след
+                <p>EㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤF</p>
+                Если есть тьма, должен быть свет
+                <p>Am</p>
+                Хочешь ли ты изменить этот мир?
+                <p>G</p>
+                Сможешь ли ты принять как есть?
+                <p>Dm</p>
+                Встать и выйти из ряда вон?
+                <p>EㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤF</p>
+                Сесть на электрический стул или трон?
+                <br><br>
+                Припев
+                <br>
+                Проигрыш 2 <p>[Am, G, Dm, E, F]</p> 8x
+            </h1>
+            <h1>
+                Припев:
+                <p>EㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤAm</p>
+                Снова за окнами белый день
+                <p>EㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤAm</p>
+                День вызывает меня на бой
+                <p>ㅤㅤGㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤF</p>
+                Я чувствую, закрывая глаза
+                <p>ㅤㅤㅤㅤEㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤF</p>
+                Весь мир идёт на меня войной
+            </h1>
+        </div>
+    </div>
+</body>
+<script>
+var pauplay4 = 0
+    function x4(){
+        if(pauplay4%2!=0){
+            document.getElementById('s4').addEventListener('change', function(){
+                document.getElementById('song4').currentTime = s4.value;
+            })
+        }
+        
+    }
+    document.getElementById('s4but').addEventListener('click', function(){
+        pauplay4=pauplay4+1
+        if(pauplay4%2!=0){
+            document.getElementById('song4').play();
+            for(var i4 = 0; i4<1; i4++){
+                setInterval( function(){
+                    if(s4.value>=60){
+                        send_result4.innerHTML = Math.floor(s4.value/60) + ":" + s4.value%60;
+                    }
+                    else{
+                        send_result4.innerHTML = "00:" + s4.value;
+                    }
+                    s4.value = document.getElementById('song4').currentTime;
+                    // send_result2.innerHTML=document.getElementById('song1').currentTime;
+                }, 1 );
+            }   
+        }
+        else{
+            document.getElementById('song4').pause();
+        }
+    })
+    function volume4(){
+        document.getElementById('v4').addEventListener('change', function(){
+            document.getElementById('song4').volume = v4.value;
+        }) 
+    }
+    document.getElementById('song4').volume = 0.5;
+</script>
+</html>
